@@ -1,0 +1,132 @@
+6. Week 4 Exercise
+
+#1 Displays natural number from 1 to 10, separated by a tab
+for i in range(1, 11):
+    print(i, end='\t')
+
+
+#2 Display natural number from 10 to 1, separated by a commas “,” Make sure the last number 1 is NOT followed by a commas
+
+for i in range(10, 0, -1):
+    if i == 1:
+        print(i, end='')
+    else:
+        print(i, end=', ')
+
+
+
+#3 Generate 5 random integers within 0 and 100, separated by a commas - Make sure the last number does NOT followed by a commas
+
+import random
+
+for _ in range(5):
+    random_number = random.randint(0, 100)
+    print(random_number, end=', ' if _ < 4 else '')  # Use a comma if not the last number
+
+
+
+#4 Guess a random generated integer
+
+import random
+
+# Generate a random integer between 0 and 10
+secret_number = random.randint(0, 10)
+
+# Initialize the number of guesses
+guess_count = 0
+
+# Maximum number of guesses allowed
+max_guesses = 4
+
+while guess_count < max_guesses:
+    # Ask the user for their guess
+    user_guess = int(input("Guess the number between 0 and 10: "))
+
+    # Check if the guess is correct
+    if user_guess == secret_number:
+        print("Correct! You guessed the number.")
+        break  # Exit the loop when the guess is correct
+    elif user_guess < secret_number:
+        print("Too low. Try again.")
+    else:
+        print("Too high. Try again.")
+
+    # Increment the guess count
+    guess_count += 1
+
+# If the loop completes without a correct guess, display the secret number
+if guess_count == max_guesses:
+    print(f"Sorry, you've run out of guesses. The secret number was {secret_number}.")
+
+
+
+#5 Determine whether a number is a prime number
+# Function to check if a number is prime
+def is_prime(number):
+    if number <= 1:
+        return False
+    elif number <= 3:
+        return True
+    elif number % 2 == 0 or number % 3 == 0:
+        return False
+    i = 5
+    while i * i <= number:
+        if number % i == 0 or number % (i + 2) == 0:
+            return False
+        i += 6
+    return True
+
+# Function to find the greatest factor/divisor
+def find_greatest_divisor(number):
+    for divisor in range(number // 2, 1, -1):
+        if number % divisor == 0:
+            return divisor
+
+# Ask the user for a natural number
+user_input = int(input("Enter a natural number: "))
+
+# Check if the number is prime
+if is_prime(user_input):
+    print("It's a prime number.")
+else:
+    greatest_divisor = find_greatest_divisor(user_input)
+    print(f"It's not a prime number. Greatest divisor: {greatest_divisor}")
+
+# Ask the user for another natural number
+user_input = int(input("Enter another natural number: "))
+
+# Display all prime numbers up to the given number
+print("Prime numbers from 2 to", user_input, "are:")
+for num in range(2, user_input + 1):
+    if is_prime(num):
+        print(num)
+
+
+
+#6 Display the greatest common divisor and the least common multiple for two natural numbers
+
+import math
+
+# Ask the user for two natural numbers
+num1 = int(input("Enter the first natural number: "))
+num2 = int(input("Enter the second natural number: "))
+
+# Calculate the GCD using math.gcd
+gcd_result = math.gcd(num1, num2)
+
+# Calculate the LCM using the formula: LCM(a, b) = (a * b) / GCD(a, b)
+lcm_result = (num1 * num2) // gcd_result
+
+# Display the results
+print(f"The GCD of {num1} and {num2} is: {gcd_result}")
+print(f"The LCM of {num1} and {num2} is: {lcm_result}")
+
+
+
+#7 Draw a right triangle - Ask the user to enter the number of rows (legs) for the right triangle
+num_rows = int(input("Enter the number of rows (legs) for the right triangle: "))
+
+# Loop through each row
+for i in range(1, num_rows + 1):
+    # Print '*' characters for the current row
+    print('*' * i)

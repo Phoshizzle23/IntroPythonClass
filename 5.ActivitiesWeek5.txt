@@ -1,0 +1,102 @@
+Exercise 1: Removing Duplicates and Sorting a List
+numbers = [70, 90, 10, 20, 30, 20, 10, 50, 60, 40, 80, 50, 40, 90, 100]
+
+# Remove duplicates and sort the list
+unique_sorted_numbers = sorted(list(set(numbers)))
+
+print(unique_sorted_numbers)
+
+Exercise 2: Find the Largest and Smallest Numbers in a List Using a While Loop
+numbers = []
+while True:
+    user_input = input("Enter a number (Press Enter to stop): ")
+    if user_input == "":
+        break
+    numbers.append(int(user_input))
+
+if numbers:
+    largest = max(numbers)
+    smallest = min(numbers)
+    print(f"Largest Number: {largest}")
+    print(f"Smallest Number: {smallest}")
+else:
+    print("No numbers entered.")
+
+Exercise 3: Using Nested Loops to Combine Greetings and Names
+greetings = []
+names = []
+
+# Input greetings
+while True:
+    greeting = input("Enter a greeting (Press Enter to stop): ")
+    if greeting == "":
+        break
+    greetings.append(greeting)
+
+# Input names
+while True:
+    name = input("Enter a name (Press Enter to stop): ")
+    if name == "":
+        break
+    names.append(name)
+
+# Combine greetings and names
+for greeting in greetings:
+    for name in names:
+        print(f"{greeting} {name}")
+
+Exercise 4: Calculate Total and Average of Numbers in a List
+numbers = []
+while True:
+    user_input = input("Enter a number (Enter 0 to stop): ")
+    if user_input == "0":
+        break
+    numbers.append(float(user_input))
+
+if numbers:
+    print("NUMBERS ENTERED:")
+    for number in numbers:
+        print(number)
+    total = sum(numbers)
+    average = total / len(numbers)
+    print(f"TOTAL: {total}")
+    print(f"AVERAGE: {average}")
+else:
+    print("No numbers entered.")
+
+Exercise 5: Student Grade Calculator Using a Dictionary
+student_name = input("Enter student name: ")
+
+# Initialize an empty dictionary to store subject grades
+grades = {}
+
+# Input subject names and grades
+for _ in range(5):
+    subject = input("Enter subject name: ")
+    percent = float(input(f"Enter {subject} percent: "))
+    grades[subject] = percent
+
+# Calculate the average of grades
+average = sum(grades.values()) / len(grades)
+
+# Determine the grade based on the average
+if average > 90:
+    result = "High Distinction"
+elif 80 <= average <= 90:
+    result = "Distinction"
+elif 70 <= average < 80:
+    result = "Credit"
+elif 60 <= average < 70:
+    result = "Pass"
+else:
+    result = "Fail"
+
+# Display the score report
+print(f"\nScore Report: {student_name}")
+print("-" * 28)
+for subject, grade in grades.items():
+    print(f"{subject}  :  {grade}")
+print("-" * 28)
+print(f"Grade Average: {average}")
+print(f"Final Result: {result}")
+

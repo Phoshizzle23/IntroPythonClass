@@ -1,0 +1,108 @@
+Week 5 Exercise
+
+Task 1:
+
+# Given string
+input_string = "This is a sample sentence."
+
+# Convert to lowercase, except for the first letter
+modified_string = input_string[0].upper() + input_string[1:].lower()
+
+# Ask the user to input a letter to capitalize
+letter = input("Enter a letter to capitalize in the sentence: ")
+
+# Capitalize the letter in the sentence
+modified_string = modified_string.replace(letter, letter.upper())
+
+print(modified_string)
+
+Task 2:
+
+Method 1: Using slicing
+
+user_input = input("Enter a string: ")
+reversed_string = user_input[::-1]
+print(reversed_string)
+
+Method 2: Using a loop
+user_input = input("Enter a string: ")
+reversed_string = ""
+for char in user_input:
+    reversed_string = char + reversed_string
+print(reversed_string)
+
+
+Method 3: Using the reversed function and join
+user_input = input("Enter a string: ")
+reversed_string = ''.join(reversed(user_input))
+print(reversed_string)
+
+Task 3:
+
+my_list = ["apple", "banana", "cherry"]
+
+# Using a while loop
+i = 0
+while i < len(my_list):
+    print(my_list[i])
+    i += 1
+
+# Using a for loop
+for item in my_list:
+    print(item)
+
+Task 4:
+import random
+
+# Create an empty list named "prices"
+prices = []
+
+# Fill it with 10 random generated integers between 50 and 100
+for _ in range(10):
+    random_price = random.randint(50, 100)
+    prices.append(random_price)
+
+print("Original prices:", prices)
+
+# Modify each price to include 10% GST
+prices_with_gst = [(price * 1.1) for price in prices]
+print("Prices with 10% GST:", prices_with_gst)
+
+Task 5:
+def is_prime(n):
+    if n <= 1:
+        return False
+    if n <= 3:
+        return True
+    if n % 2 == 0 or n % 3 == 0:
+        return False
+    i = 5
+    while i * i <= n:
+        if n % i == 0 or n % (i + 2) == 0:
+            return False
+        i += 6
+    return True
+
+integers = []
+while True:
+    user_input = input("Enter an integer between 3 and 100 (or 'exit' to quit): ")
+    if user_input == 'exit':
+        break
+    try:
+        num = int(user_input)
+        if 3 <= num <= 100:
+            integers.append(num)
+    except ValueError:
+        pass
+
+prime_numbers = [num for num in integers if is_prime(num)]
+
+if prime_numbers:
+    print("Prime numbers entered:")
+    for prime in prime_numbers:
+        print(prime)
+    average = sum(prime_numbers) / len(prime_numbers)
+    print("Average of prime numbers:", average)
+else:
+    print("No prime numbers entered.")
+

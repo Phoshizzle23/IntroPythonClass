@@ -1,0 +1,73 @@
+Exercise 1: Calculate Net Salary
+# Input employee details
+employee_name = input("Enter employee name: ")
+hours_worked = float(input("Enter hours worked: "))
+hourly_rate = float(input("Enter hourly rate: "))
+
+# Calculate net salary
+net_salary = hours_worked * hourly_rate
+
+# Display result
+print(f"Employee: {employee_name}")
+print(f"Net Salary: ${net_salary:.2f}")
+
+Exercise 2: Calculate Area of a Rectangle
+# Input rectangle dimensions
+length = float(input("Enter the length of the rectangle: "))
+width = float(input("Enter the width of the rectangle: "))
+
+# Calculate area
+area = length * width
+
+# Display result
+print(f"Area of the rectangle: {area} square units")
+
+Exercise 3: Calculate Area of a Circle
+import math
+
+# Input circle radius
+radius = float(input("Enter the radius of the circle: "))
+
+# Calculate area
+area = math.pi * radius ** 2
+
+# Display result
+print(f"Area of the circle: {area:.2f} square units")
+
+Exercise 4: Calculate Area and Volume of a Cylinder
+import math
+
+# Input cylinder dimensions
+radius = float(input("Enter the radius of the cylinder: "))
+height = float(input("Enter the height of the cylinder: "))
+
+# Calculate area and volume
+surface_area = 2 * math.pi * radius * (radius + height)
+volume = math.pi * radius ** 2 * height
+
+# Display results
+print(f"Surface Area of the cylinder: {surface_area:.2f} square units")
+print(f"Volume of the cylinder: {volume:.2f} cubic units")
+
+Exercise 5: Convert Minutes to Hours and Minutes
+# Input minutes worked
+minutes = int(input("Enter minutes worked on a job: "))
+
+# Calculate hours and remaining minutes
+hours = minutes // 60
+remaining_minutes = minutes % 60
+
+# Display result
+print(f"{minutes} minutes becomes {hours} hours and {remaining_minutes} minutes.")
+
+Exercise 6: Convert Fahrenheit to Celsius
+# Input temperature in Fahrenheit
+fahrenheit = float(input("Enter temperature in Fahrenheit: "))
+
+# Calculate equivalent temperature in Celsius
+celsius = (fahrenheit - 32) * 5 / 9
+
+# Display both values
+print(f"Fahrenheit: {fahrenheit:.1f}")
+print(f"Celsius: {celsius:.1f}")
+

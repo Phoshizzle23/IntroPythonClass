@@ -1,0 +1,96 @@
+Exercise 1: Calculate Salary with Tax
+# Input employee details
+employee_name = input("Enter employee name: ")
+hourly_rate = float(input("Enter hourly rate: "))
+weekly_hours = float(input("Enter weekly hours: "))
+
+# Calculate salary before tax
+salary = hourly_rate * weekly_hours
+
+# Calculate tax based on hourly rate
+if hourly_rate > 45:
+    tax_rate = 0.02
+else:
+    tax_rate = 0.01
+
+tax = salary * tax_rate
+
+# Calculate net salary
+net_salary = salary - tax
+
+# Display results
+print(f"Employee: {employee_name}")
+print(f"Salary before tax: ${salary:.2f}")
+print(f"Tax: ${tax:.2f}")
+print(f"Net Salary: ${net_salary:.2f}")
+
+Exercise 2: Calculate Student Grade
+# Input student's mark
+mark = float(input("Enter the student's mark: "))
+
+# Determine the grade
+if mark < 50:
+    grade = "Fail"
+elif 50 <= mark < 60:
+    grade = "Pass"
+elif 60 <= mark < 80:
+    grade = "Credit"
+else:
+    grade = "Distinction"
+
+# Display the grade
+print(f"Student Grade: {grade}")
+
+Exercise 3: Check Odd or Even
+# Input a number
+number = int(input("Enter a number: "))
+
+# Check if the number is Odd or Even
+if number % 2 == 0:
+    result = "Even"
+else:
+    result = "Odd"
+
+# Display the result
+print(f"The number is {result}.")
+
+Exercise 4: Check First Character for Vowel
+# Input user name
+user_name = input("Enter your name: ")
+
+# Check if the first character is a vowel
+if user_name[0].lower() in ['a', 'e', 'i', 'o', 'u']:
+    print("The first character is a VOWEL.")
+else:
+    print("The first character is a CONSONANT.")
+
+Exercise 5: Check User's Color Choice
+# Input user's color choice
+color = input("Enter a color: ")
+
+# Check if the color is "green" or "orange"
+if color.lower() in ["green", "orange"]:
+    print("You win.")
+else:
+    print("Sorry!")
+
+Exercise 6: Fortune Telling Program
+# Input favorite number, color, and floating point number
+favorite_number = int(input("Enter your favorite number from 1 to 50: "))
+favorite_color = input("Enter your favorite color (red, grey, or black): ")
+floating_number = float(input("Enter a floating-point number from 1 to 10: "))
+
+# Determine the fortune
+if favorite_number < 9 or (favorite_color.lower() == "grey" and floating_number == 8.43):
+    fortune = "You will win the lottery soon"
+elif favorite_number != 10 and (favorite_color.lower() == "red" or floating_number <= 1.79):
+    fortune = "You will live to 110"
+elif (favorite_number >= 26 and favorite_color.lower() == "black") or floating_number == 8.2:
+    fortune = "You will become the next prime minister"
+else:
+    fortune = "I cannot read your fortune"
+
+# Display the fortune
+print(f"Your Fortune: {fortune}")
+
+
